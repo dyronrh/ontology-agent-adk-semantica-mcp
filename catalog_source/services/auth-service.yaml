@@ -1,0 +1,12 @@
+# catalog-info.yaml — formato Backstage. Vive junto al codigo del servicio.
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: auth-service
+  description: Servicio de autenticacion y sesiones
+  annotations:
+    idp/entity-id: SVC-AUTH
+spec:
+  type: service
+  lifecycle: C-OPERATE
+  path: /services/auth-service/

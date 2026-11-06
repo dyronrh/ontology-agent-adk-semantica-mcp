@@ -1,0 +1,12 @@
+# catalog-info.yaml — formato Backstage. Vive junto al codigo del servicio.
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: feature-store
+  description: Feature store para modelos
+  annotations:
+    idp/entity-id: SVC-FEATURE-STORE
+spec:
+  type: service
+  lifecycle: C-DEPLOY
+  path: /services/feature-store/

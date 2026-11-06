@@ -1,0 +1,12 @@
+# catalog-info.yaml — formato Backstage. Vive junto al codigo del servicio.
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: checkout-web
+  description: Frontend de checkout
+  annotations:
+    idp/entity-id: SVC-CHECKOUT-WEB
+spec:
+  type: service
+  lifecycle: C-BUILD
+  path: /services/checkout-web/

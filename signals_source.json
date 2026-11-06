@@ -1,0 +1,38 @@
+{
+  "_comment": [
+    "Valores de las SEÑALES que las politicas leen. Este es el fichero que tocas",
+    "para que una demo pase o bloquee, sin tocar la ontologia ni el codigo.",
+    "",
+    "Resolucion, de menor a mayor prioridad:",
+    "  defaults  <  environments[env]  <  services[SVC]  <  overrides['SVC@env']",
+    "",
+    "En produccion esto NO es un fichero: cada señal la sirve su sistema real",
+    "(CI status del pipeline, freeze del calendario de cambios, aprobacion del",
+    "sistema de cambios). `requester_domain` sale del token de autenticacion,",
+    "NUNCA de lo que diga el usuario en el prompt: si el solicitante pudiera",
+    "declararlo, el gate de ownership no valdria nada."
+  ],
+
+  "defaults": {
+    "ci_status": "passed",
+    "security": "clean",
+    "in_freeze_window": false,
+    "approved": true,
+    "requester_domain": "D-PAYMENTS"
+  },
+
+  "environments": {
+    "dev":     { "in_freeze_window": false, "approved": true },
+    "staging": { "in_freeze_window": false, "approved": true },
+    "prod":    { "in_freeze_window": false, "approved": true }
+  },
+
+  "services": {
+    "SVC-PAYMENTS-API":  { "requester_domain": "D-PAYMENTS" },
+    "SVC-AUTH":          { "requester_domain": "D-IDENTITY" },
+    "SVC-FEATURE-STORE": { "requester_domain": "D-DATA" },
+    "SVC-CHECKOUT-WEB":  { "requester_domain": "D-FRONTEND" }
+  },
+  "overrides": { "SVC-PAYMENTS-API@prod": { "requester_domain": "D-FRONTEND" } }
+
+}

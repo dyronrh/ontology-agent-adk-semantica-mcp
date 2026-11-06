@@ -1,0 +1,6 @@
+# Fuente de verdad de la PROPIEDAD. Este fichero ya existe en tu monorepo.
+# El sync lo lee para derivar las aristas Domain-[OWNS]->Service.
+/services/payments-api/     @payments
+/services/auth-service/     @identity
+/services/feature-store/    @data
+/services/checkout-web/     @frontend

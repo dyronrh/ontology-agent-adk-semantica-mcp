@@ -1,0 +1,29 @@
+# --- Secretos ---------------------------------------------------------------
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials*.json
+service-account*.json
+
+# --- Python -----------------------------------------------------------------
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# --- Estado local de ADK (sesiones, contiene conversaciones) ----------------
+.adk/
+*.db
+
+# --- Copias de seguridad de la demo -----------------------------------------
+*.orig
+
+# --- Editor / SO / config local de Claude -----------------------------------
+.claude/
+.vscode/
+.idea/
+.DS_Store

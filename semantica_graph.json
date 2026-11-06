@@ -1,0 +1,1517 @@
+{
+  "graph_id": "4165ebfd-9ae8-464d-bfe8-2d5d641579e8",
+  "nodes": [
+    {
+      "id": "C-PLAN",
+      "type": "Capability",
+      "properties": {
+        "name": "Plan",
+        "lifecycle_order": 1,
+        "layer": "ontology",
+        "content": "Definir alcance, scaffolding y diseño del servicio"
+      }
+    },
+    {
+      "id": "C-BUILD",
+      "type": "Capability",
+      "properties": {
+        "name": "Build",
+        "lifecycle_order": 2,
+        "layer": "ontology",
+        "content": "Construir y empaquetar el servicio"
+      }
+    },
+    {
+      "id": "C-TEST",
+      "type": "Capability",
+      "properties": {
+        "name": "Test",
+        "lifecycle_order": 3,
+        "layer": "ontology",
+        "content": "CI: pruebas unitarias, integracion y calidad"
+      }
+    },
+    {
+      "id": "C-DEPLOY",
+      "type": "Capability",
+      "properties": {
+        "name": "Deploy",
+        "lifecycle_order": 4,
+        "layer": "ontology",
+        "content": "Liberar el servicio a un entorno (dev/stg/prod)"
+      }
+    },
+    {
+      "id": "C-OPERATE",
+      "type": "Capability",
+      "properties": {
+        "name": "Operate",
+        "lifecycle_order": 5,
+        "layer": "ontology",
+        "content": "Operar el servicio en produccion (on-call, SRE)"
+      }
+    },
+    {
+      "id": "C-MONITOR",
+      "type": "Capability",
+      "properties": {
+        "name": "Monitor",
+        "lifecycle_order": 6,
+        "layer": "ontology",
+        "content": "Observabilidad: SLOs, alertas, trazas"
+      }
+    },
+    {
+      "id": "C-OPTIMIZE",
+      "type": "Capability",
+      "properties": {
+        "name": "Optimize",
+        "lifecycle_order": 7,
+        "layer": "ontology",
+        "content": "Optimizar costo y rendimiento (FinOps)"
+      }
+    },
+    {
+      "id": "C-RETIRE",
+      "type": "Capability",
+      "properties": {
+        "name": "Retire",
+        "lifecycle_order": 8,
+        "layer": "ontology",
+        "content": "Decomisionar servicios y limpiar recursos"
+      }
+    },
+    {
+      "id": "INT-SCAFFOLD",
+      "type": "Intent",
+      "properties": {
+        "name": "scaffold",
+        "layer": "ontology",
+        "content": "Crear el andamiaje de un servicio nuevo"
+      }
+    },
+    {
+      "id": "INT-BUILD",
+      "type": "Intent",
+      "properties": {
+        "name": "build",
+        "layer": "ontology",
+        "content": "Compilar y empaquetar"
+      }
+    },
+    {
+      "id": "INT-TEST",
+      "type": "Intent",
+      "properties": {
+        "name": "test",
+        "layer": "ontology",
+        "content": "Correr el pipeline de CI"
+      }
+    },
+    {
+      "id": "INT-DEPLOY",
+      "type": "Intent",
+      "properties": {
+        "name": "deploy",
+        "layer": "ontology",
+        "content": "Liberar a un entorno"
+      }
+    },
+    {
+      "id": "INT-OPERATE",
+      "type": "Intent",
+      "properties": {
+        "name": "operate",
+        "layer": "ontology",
+        "content": "Operacion y on-call"
+      }
+    },
+    {
+      "id": "INT-MONITOR",
+      "type": "Intent",
+      "properties": {
+        "name": "monitor",
+        "layer": "ontology",
+        "content": "Investigar comportamiento en produccion"
+      }
+    },
+    {
+      "id": "INT-OPTIMIZE",
+      "type": "Intent",
+      "properties": {
+        "name": "optimize",
+        "layer": "ontology",
+        "content": "Reducir costo o mejorar rendimiento"
+      }
+    },
+    {
+      "id": "INT-RETIRE",
+      "type": "Intent",
+      "properties": {
+        "name": "retire",
+        "layer": "ontology",
+        "content": "Decomisionar"
+      }
+    },
+    {
+      "id": "SIG-REQUEST",
+      "type": "Signal",
+      "properties": {
+        "name": "Developer Request",
+        "layer": "ontology",
+        "content": "Peticion del desarrollador (lenguaje natural)"
+      }
+    },
+    {
+      "id": "SIG-OWNER",
+      "type": "Signal",
+      "properties": {
+        "name": "Requester Identity",
+        "layer": "ontology",
+        "content": "Dominio al que pertenece quien pide"
+      }
+    },
+    {
+      "id": "SIG-CI",
+      "type": "Signal",
+      "properties": {
+        "name": "CI Status",
+        "layer": "ontology",
+        "content": "Estado del pipeline de CI del servicio"
+      }
+    },
+    {
+      "id": "SIG-SEC",
+      "type": "Signal",
+      "properties": {
+        "name": "Security Scan",
+        "layer": "ontology",
+        "content": "Resultado del escaneo de seguridad (SAST/deps)"
+      }
+    },
+    {
+      "id": "SIG-ENV",
+      "type": "Signal",
+      "properties": {
+        "name": "Target Environment",
+        "layer": "ontology",
+        "content": "Entorno destino: dev / staging / prod"
+      }
+    },
+    {
+      "id": "SIG-FREEZE",
+      "type": "Signal",
+      "properties": {
+        "name": "Change Freeze",
+        "layer": "ontology",
+        "content": "Si hay ventana de congelamiento activa"
+      }
+    },
+    {
+      "id": "SIG-APPROVAL",
+      "type": "Signal",
+      "properties": {
+        "name": "Change Approval",
+        "layer": "ontology",
+        "content": "Aprobacion vigente de un responsable"
+      }
+    },
+    {
+      "id": "SIG-SLO",
+      "type": "Signal",
+      "properties": {
+        "name": "SLO Error Budget",
+        "layer": "ontology",
+        "content": "Si queda error budget del SLO del servicio"
+      }
+    },
+    {
+      "id": "POL-OWNERSHIP",
+      "type": "Policy",
+      "properties": {
+        "name": "Domain Ownership Gate",
+        "gate_order": 10,
+        "env_scope": [],
+        "expression": "requester_domain == owner_domain",
+        "layer": "ontology",
+        "content": "Solo el dominio dueño puede accionar sobre su servicio"
+      }
+    },
+    {
+      "id": "POL-TESTS",
+      "type": "Policy",
+      "properties": {
+        "name": "CI Tests Gate",
+        "gate_order": 20,
+        "env_scope": [],
+        "expression": "ci_status == 'passed'",
+        "layer": "ontology",
+        "content": "No se despliega sin CI en verde"
+      }
+    },
+    {
+      "id": "POL-SECSCAN",
+      "type": "Policy",
+      "properties": {
+        "name": "Security Scan Gate",
+        "gate_order": 30,
+        "env_scope": [],
+        "expression": "security == 'clean'",
+        "layer": "ontology",
+        "content": "No se despliega con vulnerabilidades criticas"
+      }
+    },
+    {
+      "id": "POL-FREEZE",
+      "type": "Policy",
+      "properties": {
+        "name": "Change Freeze Window",
+        "gate_order": 40,
+        "env_scope": [
+          "prod"
+        ],
+        "expression": "not in_freeze_window or approved",
+        "layer": "ontology",
+        "content": "Sin cambios en ventana de congelamiento, salvo aprobacion explicita"
+      }
+    },
+    {
+      "id": "POL-APPROVAL",
+      "type": "Policy",
+      "properties": {
+        "name": "Prod Approval Gate",
+        "gate_order": 50,
+        "env_scope": [
+          "prod"
+        ],
+        "expression": "approved",
+        "layer": "ontology",
+        "content": "Prod requiere aprobacion de un responsable"
+      }
+    },
+    {
+      "id": "D-PLATFORM",
+      "type": "Domain",
+      "properties": {
+        "name": "Platform & Infra",
+        "github_team": "@platform",
+        "layer": "catalog",
+        "content": "Dominio de la plataforma interna (IDP) y la infra"
+      }
+    },
+    {
+      "id": "D-PAYMENTS",
+      "type": "Domain",
+      "properties": {
+        "name": "Payments",
+        "github_team": "@payments",
+        "layer": "catalog",
+        "content": "Dominio de pagos y checkout"
+      }
+    },
+    {
+      "id": "D-IDENTITY",
+      "type": "Domain",
+      "properties": {
+        "name": "Identity & Access",
+        "github_team": "@identity",
+        "layer": "catalog",
+        "content": "Dominio de identidad, auth y permisos"
+      }
+    },
+    {
+      "id": "D-DATA",
+      "type": "Domain",
+      "properties": {
+        "name": "Data Platform",
+        "github_team": "@data",
+        "layer": "catalog",
+        "content": "Dominio de datos, feature store y pipelines"
+      }
+    },
+    {
+      "id": "D-FRONTEND",
+      "type": "Domain",
+      "properties": {
+        "name": "Web & Mobile",
+        "github_team": "@frontend",
+        "layer": "catalog",
+        "content": "Dominio de experiencias web y movil"
+      }
+    },
+    {
+      "id": "SVC-AUTH",
+      "type": "Service",
+      "properties": {
+        "name": "auth-service",
+        "path": "/services/auth-service/",
+        "layer": "catalog",
+        "content": "Servicio de autenticacion y sesiones"
+      }
+    },
+    {
+      "id": "SVC-CHECKOUT-WEB",
+      "type": "Service",
+      "properties": {
+        "name": "checkout-web",
+        "path": "/services/checkout-web/",
+        "layer": "catalog",
+        "content": "Frontend de checkout"
+      }
+    },
+    {
+      "id": "SVC-FEATURE-STORE",
+      "type": "Service",
+      "properties": {
+        "name": "feature-store",
+        "path": "/services/feature-store/",
+        "layer": "catalog",
+        "content": "Feature store para modelos"
+      }
+    },
+    {
+      "id": "SVC-PAYMENTS-API",
+      "type": "Service",
+      "properties": {
+        "name": "payments-api",
+        "path": "/services/payments-api/",
+        "layer": "catalog",
+        "content": "Servicio de pagos y cobros"
+      }
+    },
+    {
+      "id": "AGENT-ORCH",
+      "type": "Agent",
+      "properties": {
+        "name": "Platform Orchestrator Agent",
+        "framework": "Google ADK 2.5 (LlmAgent + sub_agents) + Semantica MCP",
+        "layer": "catalog",
+        "content": "Agente orquestador de la plataforma interna"
+      }
+    },
+    {
+      "id": "SA-SCAFFOLD",
+      "type": "SubAgent",
+      "properties": {
+        "name": "scaffold-agent",
+        "layer": "catalog",
+        "content": "Sub-agente scaffold-agent"
+      }
+    },
+    {
+      "id": "SA-TEST",
+      "type": "SubAgent",
+      "properties": {
+        "name": "test-agent",
+        "layer": "catalog",
+        "content": "Sub-agente test-agent"
+      }
+    },
+    {
+      "id": "SA-DEPLOY",
+      "type": "SubAgent",
+      "properties": {
+        "name": "deploy-agent",
+        "layer": "catalog",
+        "content": "Sub-agente deploy-agent"
+      }
+    },
+    {
+      "id": "SA-SRE",
+      "type": "SubAgent",
+      "properties": {
+        "name": "sre-agent",
+        "layer": "catalog",
+        "content": "Sub-agente sre-agent"
+      }
+    },
+    {
+      "id": "SA-COST",
+      "type": "SubAgent",
+      "properties": {
+        "name": "finops-agent",
+        "layer": "catalog",
+        "content": "Sub-agente finops-agent"
+      }
+    },
+    {
+      "id": "SA-DECOM",
+      "type": "SubAgent",
+      "properties": {
+        "name": "decommission-agent",
+        "layer": "catalog",
+        "content": "Sub-agente decommission-agent"
+      }
+    },
+    {
+      "id": "ffc38f99-0411-4aea-9c31-207d6317121d",
+      "type": "decision",
+      "properties": {
+        "category": "POL-OWNERSHIP",
+        "outcome": "approved",
+        "confidence": 1.0,
+        "timestamp": 1793983179.799366,
+        "scenario": "Deploy de SVC-PAYMENTS-API a prod por un solicitante del dominio D-PAYMENTS",
+        "decision_maker": "platform_orchestrator",
+        "reasoning": "Evaluando 'requester_domain == owner_domain'. requester_domain='D-PAYMENTS', owner_domain='D-PAYMENTS'. Resultado: true",
+        "content": "Deploy de SVC-PAYMENTS-API a prod por un solicitante del dominio D-PAYMENTS"
+      }
+    },
+    {
+      "id": "category_POL-OWNERSHIP",
+      "type": "category",
+      "properties": {
+        "name": "POL-OWNERSHIP",
+        "content": "category_POL-OWNERSHIP"
+      }
+    },
+    {
+      "id": "maker_platform_orchestrator",
+      "type": "decision_maker",
+      "properties": {
+        "name": "platform_orchestrator",
+        "content": "maker_platform_orchestrator"
+      }
+    },
+    {
+      "id": "5521473c-257a-4422-bef1-e146a7fbe94c",
+      "type": "decision",
+      "properties": {
+        "category": "POL-TESTS",
+        "outcome": "approved",
+        "confidence": 1.0,
+        "timestamp": 1793983179.801467,
+        "scenario": "Deploy de SVC-PAYMENTS-API a prod con estado de CI 'passed'",
+        "decision_maker": "platform_orchestrator",
+        "reasoning": "Evaluando 'ci_status == 'passed''. ci_status='passed'. Resultado: true",
+        "content": "Deploy de SVC-PAYMENTS-API a prod con estado de CI 'passed'"
+      }
+    },
+    {
+      "id": "category_POL-TESTS",
+      "type": "category",
+      "properties": {
+        "name": "POL-TESTS",
+        "content": "category_POL-TESTS"
+      }
+    },
+    {
+      "id": "7d43f27d-c6d5-43b8-9914-e48397f904e3",
+      "type": "decision",
+      "properties": {
+        "category": "POL-SECSCAN",
+        "outcome": "approved",
+        "confidence": 1.0,
+        "timestamp": 1793983179.803369,
+        "scenario": "Deploy de SVC-PAYMENTS-API a prod con resultado de escaneo de seguridad 'clean'",
+        "decision_maker": "platform_orchestrator",
+        "reasoning": "Evaluando 'security == 'clean''. security='clean'. Resultado: true",
+        "content": "Deploy de SVC-PAYMENTS-API a prod con resultado de escaneo de seguridad 'clean'"
+      }
+    },
+    {
+      "id": "category_POL-SECSCAN",
+      "type": "category",
+      "properties": {
+        "name": "POL-SECSCAN",
+        "content": "category_POL-SECSCAN"
+      }
+    },
+    {
+      "id": "305ed41a-1d00-4274-a4c2-786bb9395a70",
+      "type": "decision",
+      "properties": {
+        "category": "POL-FREEZE",
+        "outcome": "approved",
+        "confidence": 1.0,
+        "timestamp": 1793983179.806174,
+        "scenario": "Deploy de SVC-PAYMENTS-API a prod fuera de ventana de freeze",
+        "decision_maker": "platform_orchestrator",
+        "reasoning": "Evaluando 'not in_freeze_window or approved'. in_freeze_window=false. Resultado: true",
+        "content": "Deploy de SVC-PAYMENTS-API a prod fuera de ventana de freeze"
+      }
+    },
+    {
+      "id": "category_POL-FREEZE",
+      "type": "category",
+      "properties": {
+        "name": "POL-FREEZE",
+        "content": "category_POL-FREEZE"
+      }
+    },
+    {
+      "id": "1e613d5c-18b1-4d2e-975a-e21355964e18",
+      "type": "decision",
+      "properties": {
+        "category": "POL-APPROVAL",
+        "outcome": "approved",
+        "confidence": 1.0,
+        "timestamp": 1793983179.808694,
+        "scenario": "Deploy de SVC-PAYMENTS-API a prod con aprobacion explicita",
+        "decision_maker": "platform_orchestrator",
+        "reasoning": "Evaluando 'approved'. approved=true. Resultado: true",
+        "content": "Deploy de SVC-PAYMENTS-API a prod con aprobacion explicita"
+      }
+    },
+    {
+      "id": "category_POL-APPROVAL",
+      "type": "category",
+      "properties": {
+        "name": "POL-APPROVAL",
+        "content": "category_POL-APPROVAL"
+      }
+    },
+    {
+      "id": "f19110a8-d5e8-4a9e-92c5-cba569aafa20",
+      "type": "decision",
+      "properties": {
+        "category": "POL-OWNERSHIP",
+        "outcome": "approved",
+        "confidence": 1.0,
+        "timestamp": 1793983228.30449,
+        "scenario": "Deploy de SVC-PAYMENTS-API a staging por un solicitante del dominio D-PAYMENTS",
+        "decision_maker": "platform_orchestrator",
+        "reasoning": "Evaluando 'requester_domain == owner_domain'. requester_domain='D-PAYMENTS', owner_domain='D-PAYMENTS'. Resultado: true",
+        "content": "Deploy de SVC-PAYMENTS-API a staging por un solicitante del dominio D-PAYMENTS"
+      }
+    },
+    {
+      "id": "30e573df-5937-4900-89d5-a6d57adfb103",
+      "type": "decision",
+      "properties": {
+        "category": "POL-TESTS",
+        "outcome": "approved",
+        "confidence": 1.0,
+        "timestamp": 1793983228.305946,
+        "scenario": "Deploy de SVC-PAYMENTS-API a staging con estado de CI 'passed'",
+        "decision_maker": "platform_orchestrator",
+        "reasoning": "Evaluando 'ci_status == 'passed''. ci_status='passed'. Resultado: true",
+        "content": "Deploy de SVC-PAYMENTS-API a staging con estado de CI 'passed'"
+      }
+    },
+    {
+      "id": "98f5d783-b344-4761-9bc4-19d752db9cbd",
+      "type": "decision",
+      "properties": {
+        "category": "POL-SECSCAN",
+        "outcome": "approved",
+        "confidence": 1.0,
+        "timestamp": 1793983228.307101,
+        "scenario": "Deploy de SVC-PAYMENTS-API a staging con resultado de escaneo de seguridad 'clean'",
+        "decision_maker": "platform_orchestrator",
+        "reasoning": "Evaluando 'security == 'clean''. security='clean'. Resultado: true",
+        "content": "Deploy de SVC-PAYMENTS-API a staging con resultado de escaneo de seguridad 'clean'"
+      }
+    },
+    {
+      "id": "1a0f4a44-d23a-42f8-bf24-bb95e10c1fe7",
+      "type": "decision",
+      "properties": {
+        "category": "POL-OWNERSHIP",
+        "outcome": "approved",
+        "confidence": 1.0,
+        "timestamp": 1793983321.07522,
+        "scenario": "Deploy de SVC-PAYMENTS-API a prod por un solicitante del dominio D-PAYMENTS",
+        "decision_maker": "platform_orchestrator",
+        "reasoning": "Evaluando 'requester_domain == owner_domain'. requester_domain='D-PAYMENTS', owner_domain='D-PAYMENTS'. Resultado: true",
+        "content": "Deploy de SVC-PAYMENTS-API a prod por un solicitante del dominio D-PAYMENTS"
+      }
+    },
+    {
+      "id": "5795ca60-16de-4d54-aa82-6bdd1a09f581",
+      "type": "decision",
+      "properties": {
+        "category": "POL-TESTS",
+        "outcome": "denied",
+        "confidence": 1.0,
+        "timestamp": 1793983321.079332,
+        "scenario": "Deploy de SVC-PAYMENTS-API a prod con estado de CI 'failed'",
+        "decision_maker": "platform_orchestrator",
+        "reasoning": "Evaluando 'ci_status == 'passed''. ci_status='failed'. Resultado: false",
+        "content": "Deploy de SVC-PAYMENTS-API a prod con estado de CI 'failed'"
+      }
+    },
+    {
+      "id": "86ad2a81-0cbe-40c1-accf-30cee1e942dc",
+      "type": "decision",
+      "properties": {
+        "category": "POL-OWNERSHIP",
+        "outcome": "approved",
+        "confidence": 1.0,
+        "timestamp": 1793983413.238966,
+        "scenario": "Deploy de SVC-PAYMENTS-API a prod por un solicitante del dominio D-PAYMENTS",
+        "decision_maker": "platform_orchestrator",
+        "reasoning": "Evaluando 'requester_domain == owner_domain'. requester_domain='D-PAYMENTS', owner_domain='D-PAYMENTS'. Resultado: true",
+        "content": "Deploy de SVC-PAYMENTS-API a prod por un solicitante del dominio D-PAYMENTS"
+      }
+    },
+    {
+      "id": "cd416a2f-e99c-4bfc-8c94-b49f37f34dd3",
+      "type": "decision",
+      "properties": {
+        "category": "POL-TESTS",
+        "outcome": "denied",
+        "confidence": 1.0,
+        "timestamp": 1793983413.240319,
+        "scenario": "Deploy de SVC-PAYMENTS-API a prod con estado de CI 'failed'",
+        "decision_maker": "platform_orchestrator",
+        "reasoning": "Evaluando 'ci_status == 'passed''. ci_status='failed'. Resultado: false",
+        "content": "Deploy de SVC-PAYMENTS-API a prod con estado de CI 'failed'"
+      }
+    },
+    {
+      "id": "eb9a1cf7-1b25-425b-bf8e-727fae27ede1",
+      "type": "decision",
+      "properties": {
+        "category": "POL-OWNERSHIP",
+        "outcome": "denied",
+        "confidence": 1.0,
+        "timestamp": 1793983466.042323,
+        "scenario": "Deploy de SVC-PAYMENTS-API a prod por un solicitante del dominio D-FRONTEND",
+        "decision_maker": "platform_orchestrator",
+        "reasoning": "Evaluando 'requester_domain == owner_domain'. requester_domain='D-FRONTEND', owner_domain='D-PAYMENTS'. Resultado: false",
+        "content": "Deploy de SVC-PAYMENTS-API a prod por un solicitante del dominio D-FRONTEND"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "0b0b6900-e340-50f7-b0a4-6573caa5e37a",
+      "familyId": "0b0b6900-e340-50f7-b0a4-6573caa5e37a",
+      "source_id": "C-PLAN",
+      "target_id": "C-BUILD",
+      "type": "NEXT_STAGE",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "id": "f868c16d-3667-56d6-b806-58520c2be43b",
+      "familyId": "f868c16d-3667-56d6-b806-58520c2be43b",
+      "source_id": "C-BUILD",
+      "target_id": "C-TEST",
+      "type": "NEXT_STAGE",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "id": "fb75717d-8530-571b-a935-2ce867110802",
+      "familyId": "fb75717d-8530-571b-a935-2ce867110802",
+      "source_id": "C-TEST",
+      "target_id": "C-DEPLOY",
+      "type": "NEXT_STAGE",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "id": "dbd3a00c-bb72-56e0-8f02-dcc0c02bcee6",
+      "familyId": "dbd3a00c-bb72-56e0-8f02-dcc0c02bcee6",
+      "source_id": "C-DEPLOY",
+      "target_id": "C-OPERATE",
+      "type": "NEXT_STAGE",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "id": "46c966ea-5d2b-5e1e-910d-3c27610da107",
+      "familyId": "46c966ea-5d2b-5e1e-910d-3c27610da107",
+      "source_id": "C-OPERATE",
+      "target_id": "C-MONITOR",
+      "type": "NEXT_STAGE",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "id": "c07ae52a-f58d-59f7-9d09-6d9d754c9a13",
+      "familyId": "c07ae52a-f58d-59f7-9d09-6d9d754c9a13",
+      "source_id": "C-MONITOR",
+      "target_id": "C-OPTIMIZE",
+      "type": "NEXT_STAGE",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "id": "30e5e332-a91d-5f60-9c9f-d3dad54bc6b2",
+      "familyId": "30e5e332-a91d-5f60-9c9f-d3dad54bc6b2",
+      "source_id": "C-OPTIMIZE",
+      "target_id": "C-RETIRE",
+      "type": "NEXT_STAGE",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "id": "1bdcb9b4-4d12-54d4-b70a-1a85fc3cbd8e",
+      "familyId": "1bdcb9b4-4d12-54d4-b70a-1a85fc3cbd8e",
+      "source_id": "INT-SCAFFOLD",
+      "target_id": "C-PLAN",
+      "type": "REALIZES",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "id": "562e710c-83b0-5f57-b5b1-d3f905c9d0a7",
+      "familyId": "562e710c-83b0-5f57-b5b1-d3f905c9d0a7",
+      "source_id": "INT-BUILD",
+      "target_id": "C-BUILD",
+      "type": "REALIZES",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "id": "cd4b303c-3acf-55ea-8485-ec6329cec70c",
+      "familyId": "cd4b303c-3acf-55ea-8485-ec6329cec70c",
+      "source_id": "INT-TEST",
+      "target_id": "C-TEST",
+      "type": "REALIZES",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "id": "10ffd826-45ce-572d-ac80-9e1b8e74bd70",
+      "familyId": "10ffd826-45ce-572d-ac80-9e1b8e74bd70",
+      "source_id": "INT-DEPLOY",
+      "target_id": "C-DEPLOY",
+      "type": "REALIZES",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "id": "694428de-8b5d-52e4-a742-708fd793eed7",
+      "familyId": "694428de-8b5d-52e4-a742-708fd793eed7",
+      "source_id": "INT-OPERATE",
+      "target_id": "C-OPERATE",
+      "type": "REALIZES",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "id": "016f90ae-f323-584c-9ab1-45b711070d3d",
+      "familyId": "016f90ae-f323-584c-9ab1-45b711070d3d",
+      "source_id": "INT-MONITOR",
+      "target_id": "C-MONITOR",
+      "type": "REALIZES",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "id": "05e5b22d-e37e-549d-98f6-7c2bbc95a8eb",
+      "familyId": "05e5b22d-e37e-549d-98f6-7c2bbc95a8eb",
+      "source_id": "INT-OPTIMIZE",
+      "target_id": "C-OPTIMIZE",
+      "type": "REALIZES",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "id": "06d4b82c-105a-51f4-96e7-6a85de073d8a",
+      "familyId": "06d4b82c-105a-51f4-96e7-6a85de073d8a",
+      "source_id": "INT-RETIRE",
+      "target_id": "C-RETIRE",
+      "type": "REALIZES",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "id": "ab65cf44-39fe-579f-8db6-fc8e6c6f27b2",
+      "familyId": "ab65cf44-39fe-579f-8db6-fc8e6c6f27b2",
+      "source_id": "POL-OWNERSHIP",
+      "target_id": "C-PLAN",
+      "type": "APPLIES_TO",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "id": "acad0cdd-2539-5530-9186-3b7b1ac69629",
+      "familyId": "acad0cdd-2539-5530-9186-3b7b1ac69629",
+      "source_id": "POL-OWNERSHIP",
+      "target_id": "C-BUILD",
+      "type": "APPLIES_TO",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "id": "3fd86d17-218f-5653-b198-dcdecc9d4247",
+      "familyId": "3fd86d17-218f-5653-b198-dcdecc9d4247",
+      "source_id": "POL-OWNERSHIP",
+      "target_id": "C-TEST",
+      "type": "APPLIES_TO",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "id": "fefcff73-1a35-59c7-9311-273e49deb2b0",
+      "familyId": "fefcff73-1a35-59c7-9311-273e49deb2b0",
+      "source_id": "POL-OWNERSHIP",
+      "target_id": "C-DEPLOY",
+      "type": "APPLIES_TO",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "id": "729ae2d3-1790-531d-895e-57bc371674f7",
+      "familyId": "729ae2d3-1790-531d-895e-57bc371674f7",
+      "source_id": "POL-OWNERSHIP",
+      "target_id": "C-OPERATE",
+      "type": "APPLIES_TO",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "id": "8184a2a1-cdc9-54f4-858b-7a58664802a1",
+      "familyId": "8184a2a1-cdc9-54f4-858b-7a58664802a1",
+      "source_id": "POL-OWNERSHIP",
+      "target_id": "C-MONITOR",
+      "type": "APPLIES_TO",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "id": "d3b38ab5-7d4a-5225-bce8-9ca9cb2494d8",
+      "familyId": "d3b38ab5-7d4a-5225-bce8-9ca9cb2494d8",
+      "source_id": "POL-OWNERSHIP",
+      "target_id": "C-OPTIMIZE",
+      "type": "APPLIES_TO",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "id": "0a103954-e036-5f4b-a483-746dcd86ce44",
+      "familyId": "0a103954-e036-5f4b-a483-746dcd86ce44",
+      "source_id": "POL-OWNERSHIP",
+      "target_id": "C-RETIRE",
+      "type": "APPLIES_TO",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "id": "cdb35859-025b-59d8-a981-d963e46c1f8b",
+      "familyId": "cdb35859-025b-59d8-a981-d963e46c1f8b",
+      "source_id": "POL-OWNERSHIP",
+      "target_id": "SIG-OWNER",
+      "type": "EVALUATES",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "id": "41c60d47-5851-5ff2-a9f9-8411423a533a",
+      "familyId": "41c60d47-5851-5ff2-a9f9-8411423a533a",
+      "source_id": "POL-OWNERSHIP",
+      "target_id": "SIG-REQUEST",
+      "type": "EVALUATES",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "id": "1d540838-6c2b-5c6a-a920-b2099b2ed9d9",
+      "familyId": "1d540838-6c2b-5c6a-a920-b2099b2ed9d9",
+      "source_id": "POL-TESTS",
+      "target_id": "C-DEPLOY",
+      "type": "APPLIES_TO",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "id": "54c4a179-6758-57c2-82fd-4c0cc076e268",
+      "familyId": "54c4a179-6758-57c2-82fd-4c0cc076e268",
+      "source_id": "POL-TESTS",
+      "target_id": "SIG-CI",
+      "type": "EVALUATES",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "id": "4741804f-c6d4-5735-935c-0ecb80ccbb1d",
+      "familyId": "4741804f-c6d4-5735-935c-0ecb80ccbb1d",
+      "source_id": "POL-SECSCAN",
+      "target_id": "C-DEPLOY",
+      "type": "APPLIES_TO",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "id": "6a567d1e-017e-5787-9521-d534295c01bb",
+      "familyId": "6a567d1e-017e-5787-9521-d534295c01bb",
+      "source_id": "POL-SECSCAN",
+      "target_id": "SIG-SEC",
+      "type": "EVALUATES",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "id": "f08076b0-6dc5-54b4-bfd9-36fe7541e0f5",
+      "familyId": "f08076b0-6dc5-54b4-bfd9-36fe7541e0f5",
+      "source_id": "POL-FREEZE",
+      "target_id": "C-DEPLOY",
+      "type": "APPLIES_TO",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "id": "7fbdaf12-5679-5182-9f46-8b09b0c0bc2b",
+      "familyId": "7fbdaf12-5679-5182-9f46-8b09b0c0bc2b",
+      "source_id": "POL-FREEZE",
+      "target_id": "C-RETIRE",
+      "type": "APPLIES_TO",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "id": "e5ca54ae-7ea8-547d-9bc7-24f93f2091da",
+      "familyId": "e5ca54ae-7ea8-547d-9bc7-24f93f2091da",
+      "source_id": "POL-FREEZE",
+      "target_id": "SIG-FREEZE",
+      "type": "EVALUATES",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "id": "9e0eab71-e0f2-5390-97d5-333a9a6f7793",
+      "familyId": "9e0eab71-e0f2-5390-97d5-333a9a6f7793",
+      "source_id": "POL-FREEZE",
+      "target_id": "SIG-APPROVAL",
+      "type": "EVALUATES",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "id": "ee70fb72-3938-5d6d-a13f-46dfb8462766",
+      "familyId": "ee70fb72-3938-5d6d-a13f-46dfb8462766",
+      "source_id": "POL-FREEZE",
+      "target_id": "SIG-ENV",
+      "type": "EVALUATES",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "id": "2c93c885-01d0-5558-ba1c-8b802a0c5067",
+      "familyId": "2c93c885-01d0-5558-ba1c-8b802a0c5067",
+      "source_id": "POL-APPROVAL",
+      "target_id": "C-DEPLOY",
+      "type": "APPLIES_TO",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "id": "d5c472e7-a7e0-5b56-9fa2-8cf80ea95204",
+      "familyId": "d5c472e7-a7e0-5b56-9fa2-8cf80ea95204",
+      "source_id": "POL-APPROVAL",
+      "target_id": "C-RETIRE",
+      "type": "APPLIES_TO",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "id": "b329d7ce-f83c-5c09-96c0-5600e0d11b1d",
+      "familyId": "b329d7ce-f83c-5c09-96c0-5600e0d11b1d",
+      "source_id": "POL-APPROVAL",
+      "target_id": "SIG-APPROVAL",
+      "type": "EVALUATES",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "id": "275db8e4-adeb-5194-8a9a-0d58e43492f5",
+      "familyId": "275db8e4-adeb-5194-8a9a-0d58e43492f5",
+      "source_id": "POL-APPROVAL",
+      "target_id": "SIG-ENV",
+      "type": "EVALUATES",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "id": "65db589a-beea-5d46-8e9b-aec3420cf248",
+      "familyId": "65db589a-beea-5d46-8e9b-aec3420cf248",
+      "source_id": "D-IDENTITY",
+      "target_id": "SVC-AUTH",
+      "type": "OWNS",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "id": "9d3332b5-a5b3-5449-a237-bafebd14c947",
+      "familyId": "9d3332b5-a5b3-5449-a237-bafebd14c947",
+      "source_id": "SVC-AUTH",
+      "target_id": "C-OPERATE",
+      "type": "AT_STAGE",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "id": "3a6daa85-9d4e-5d9c-85a1-efb3e005b50b",
+      "familyId": "3a6daa85-9d4e-5d9c-85a1-efb3e005b50b",
+      "source_id": "D-FRONTEND",
+      "target_id": "SVC-CHECKOUT-WEB",
+      "type": "OWNS",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "id": "b4f76a84-1bb9-5868-b9ce-c5dd21708704",
+      "familyId": "b4f76a84-1bb9-5868-b9ce-c5dd21708704",
+      "source_id": "SVC-CHECKOUT-WEB",
+      "target_id": "C-BUILD",
+      "type": "AT_STAGE",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "id": "9cabed74-7071-5e2a-95fc-3f28f95230b8",
+      "familyId": "9cabed74-7071-5e2a-95fc-3f28f95230b8",
+      "source_id": "D-DATA",
+      "target_id": "SVC-FEATURE-STORE",
+      "type": "OWNS",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "id": "fd7269ff-555c-52b0-8b0c-11df74675d86",
+      "familyId": "fd7269ff-555c-52b0-8b0c-11df74675d86",
+      "source_id": "SVC-FEATURE-STORE",
+      "target_id": "C-DEPLOY",
+      "type": "AT_STAGE",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "id": "5608b265-0888-56ce-8c43-c59dd1e83d9e",
+      "familyId": "5608b265-0888-56ce-8c43-c59dd1e83d9e",
+      "source_id": "D-PAYMENTS",
+      "target_id": "SVC-PAYMENTS-API",
+      "type": "OWNS",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "id": "77ebec7a-50cf-5fda-8cf4-ec5d162335b0",
+      "familyId": "77ebec7a-50cf-5fda-8cf4-ec5d162335b0",
+      "source_id": "SVC-PAYMENTS-API",
+      "target_id": "C-OPERATE",
+      "type": "AT_STAGE",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "id": "fab4a899-5d92-5abc-a947-66f748727cb5",
+      "familyId": "fab4a899-5d92-5abc-a947-66f748727cb5",
+      "source_id": "AGENT-ORCH",
+      "target_id": "SA-SCAFFOLD",
+      "type": "ORCHESTRATES",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "id": "8bb094f7-efc1-5859-b6a6-d075c207edff",
+      "familyId": "8bb094f7-efc1-5859-b6a6-d075c207edff",
+      "source_id": "SA-SCAFFOLD",
+      "target_id": "C-PLAN",
+      "type": "HANDLES",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "id": "5688682f-559f-5301-8b5e-e61d21bff54f",
+      "familyId": "5688682f-559f-5301-8b5e-e61d21bff54f",
+      "source_id": "SA-SCAFFOLD",
+      "target_id": "C-BUILD",
+      "type": "HANDLES",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "id": "fcec8c46-9e31-5952-8981-c7bbe0b1cec1",
+      "familyId": "fcec8c46-9e31-5952-8981-c7bbe0b1cec1",
+      "source_id": "AGENT-ORCH",
+      "target_id": "SA-TEST",
+      "type": "ORCHESTRATES",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "id": "f43bd3aa-15e4-5d87-877a-2dacc49f9770",
+      "familyId": "f43bd3aa-15e4-5d87-877a-2dacc49f9770",
+      "source_id": "SA-TEST",
+      "target_id": "C-TEST",
+      "type": "HANDLES",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "id": "b9484929-d3ef-54f5-b7ab-4afe25a2a9a9",
+      "familyId": "b9484929-d3ef-54f5-b7ab-4afe25a2a9a9",
+      "source_id": "AGENT-ORCH",
+      "target_id": "SA-DEPLOY",
+      "type": "ORCHESTRATES",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "id": "897a23de-ad65-5af1-b64c-d75d9dc92028",
+      "familyId": "897a23de-ad65-5af1-b64c-d75d9dc92028",
+      "source_id": "SA-DEPLOY",
+      "target_id": "C-DEPLOY",
+      "type": "HANDLES",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "id": "6c7a350e-c814-540d-a7af-47f0cb9b29b0",
+      "familyId": "6c7a350e-c814-540d-a7af-47f0cb9b29b0",
+      "source_id": "AGENT-ORCH",
+      "target_id": "SA-SRE",
+      "type": "ORCHESTRATES",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "id": "c4a34472-fa6a-56cf-8cea-9dffa4c09945",
+      "familyId": "c4a34472-fa6a-56cf-8cea-9dffa4c09945",
+      "source_id": "SA-SRE",
+      "target_id": "C-OPERATE",
+      "type": "HANDLES",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "id": "ff09ed35-7bb9-5117-9326-50d57b0f968d",
+      "familyId": "ff09ed35-7bb9-5117-9326-50d57b0f968d",
+      "source_id": "SA-SRE",
+      "target_id": "C-MONITOR",
+      "type": "HANDLES",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "id": "608f1957-a08d-51db-b75e-4e13c03e5d4b",
+      "familyId": "608f1957-a08d-51db-b75e-4e13c03e5d4b",
+      "source_id": "AGENT-ORCH",
+      "target_id": "SA-COST",
+      "type": "ORCHESTRATES",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "id": "4a641e1d-f93c-583f-b216-604b737bf8ab",
+      "familyId": "4a641e1d-f93c-583f-b216-604b737bf8ab",
+      "source_id": "SA-COST",
+      "target_id": "C-OPTIMIZE",
+      "type": "HANDLES",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "id": "55a7d43d-bc6a-5df7-9cd8-02420b47527b",
+      "familyId": "55a7d43d-bc6a-5df7-9cd8-02420b47527b",
+      "source_id": "AGENT-ORCH",
+      "target_id": "SA-DECOM",
+      "type": "ORCHESTRATES",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "id": "b835fc73-fc56-50c9-8fd5-0ea36844eedd",
+      "familyId": "b835fc73-fc56-50c9-8fd5-0ea36844eedd",
+      "source_id": "SA-DECOM",
+      "target_id": "C-RETIRE",
+      "type": "HANDLES",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "id": "40e91eed-51e8-5cd9-8988-d86553c4de24",
+      "familyId": "40e91eed-51e8-5cd9-8988-d86553c4de24",
+      "source_id": "SIG-REQUEST",
+      "target_id": "AGENT-ORCH",
+      "type": "FEEDS",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "id": "17206819-1e6d-5e64-9942-a095273c90d7",
+      "familyId": "17206819-1e6d-5e64-9942-a095273c90d7",
+      "source_id": "SIG-OWNER",
+      "target_id": "AGENT-ORCH",
+      "type": "FEEDS",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "id": "24183813-6879-5ee5-ac0e-7aee79834b02",
+      "familyId": "24183813-6879-5ee5-ac0e-7aee79834b02",
+      "source_id": "SIG-CI",
+      "target_id": "AGENT-ORCH",
+      "type": "FEEDS",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "id": "9a7886a8-6661-55e8-94f5-d94248adeb56",
+      "familyId": "9a7886a8-6661-55e8-94f5-d94248adeb56",
+      "source_id": "SIG-SEC",
+      "target_id": "AGENT-ORCH",
+      "type": "FEEDS",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "id": "0d30e916-ce38-5d06-a78a-f31f97e86dd1",
+      "familyId": "0d30e916-ce38-5d06-a78a-f31f97e86dd1",
+      "source_id": "SIG-ENV",
+      "target_id": "AGENT-ORCH",
+      "type": "FEEDS",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "id": "9ff6c2e1-07a9-540e-afb9-4d459275d1d5",
+      "familyId": "9ff6c2e1-07a9-540e-afb9-4d459275d1d5",
+      "source_id": "SIG-FREEZE",
+      "target_id": "AGENT-ORCH",
+      "type": "FEEDS",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "id": "d1e94d81-f87e-5987-992a-dc2cd3da88bd",
+      "familyId": "d1e94d81-f87e-5987-992a-dc2cd3da88bd",
+      "source_id": "SIG-APPROVAL",
+      "target_id": "AGENT-ORCH",
+      "type": "FEEDS",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "id": "d44f7413-b952-5c3a-90c7-2deedf2a7020",
+      "familyId": "d44f7413-b952-5c3a-90c7-2deedf2a7020",
+      "source_id": "ffc38f99-0411-4aea-9c31-207d6317121d",
+      "target_id": "category_POL-OWNERSHIP",
+      "type": "belongs_to",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "id": "bf9cfc8f-123d-58e3-8d81-bfea65c5882f",
+      "familyId": "bf9cfc8f-123d-58e3-8d81-bfea65c5882f",
+      "source_id": "ffc38f99-0411-4aea-9c31-207d6317121d",
+      "target_id": "maker_platform_orchestrator",
+      "type": "made_by",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "id": "e09fe281-8a26-5c96-8268-0ffe0e0a17aa",
+      "familyId": "e09fe281-8a26-5c96-8268-0ffe0e0a17aa",
+      "source_id": "5521473c-257a-4422-bef1-e146a7fbe94c",
+      "target_id": "category_POL-TESTS",
+      "type": "belongs_to",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "id": "d3641d7a-c1bd-5da7-af0a-feea337a6f2a",
+      "familyId": "d3641d7a-c1bd-5da7-af0a-feea337a6f2a",
+      "source_id": "5521473c-257a-4422-bef1-e146a7fbe94c",
+      "target_id": "maker_platform_orchestrator",
+      "type": "made_by",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "id": "e1fd148c-0c8e-5bdb-a4b7-028eb0d8166d",
+      "familyId": "e1fd148c-0c8e-5bdb-a4b7-028eb0d8166d",
+      "source_id": "7d43f27d-c6d5-43b8-9914-e48397f904e3",
+      "target_id": "category_POL-SECSCAN",
+      "type": "belongs_to",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "id": "b2572fd5-8114-5656-bf38-7cd634267325",
+      "familyId": "b2572fd5-8114-5656-bf38-7cd634267325",
+      "source_id": "7d43f27d-c6d5-43b8-9914-e48397f904e3",
+      "target_id": "maker_platform_orchestrator",
+      "type": "made_by",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "id": "54ae115d-c3bc-546f-9f43-1b46479cc440",
+      "familyId": "54ae115d-c3bc-546f-9f43-1b46479cc440",
+      "source_id": "305ed41a-1d00-4274-a4c2-786bb9395a70",
+      "target_id": "category_POL-FREEZE",
+      "type": "belongs_to",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "id": "76798825-8749-54f0-8ed5-1bafbf480f37",
+      "familyId": "76798825-8749-54f0-8ed5-1bafbf480f37",
+      "source_id": "305ed41a-1d00-4274-a4c2-786bb9395a70",
+      "target_id": "maker_platform_orchestrator",
+      "type": "made_by",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "id": "4804cf06-8c17-5852-ad96-e9ba5a49794f",
+      "familyId": "4804cf06-8c17-5852-ad96-e9ba5a49794f",
+      "source_id": "1e613d5c-18b1-4d2e-975a-e21355964e18",
+      "target_id": "category_POL-APPROVAL",
+      "type": "belongs_to",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "id": "907d2e0d-8851-5a4e-90d6-af3a6f1a42b7",
+      "familyId": "907d2e0d-8851-5a4e-90d6-af3a6f1a42b7",
+      "source_id": "1e613d5c-18b1-4d2e-975a-e21355964e18",
+      "target_id": "maker_platform_orchestrator",
+      "type": "made_by",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "id": "af565475-35c2-550a-84dc-0789a465e95f",
+      "familyId": "af565475-35c2-550a-84dc-0789a465e95f",
+      "source_id": "f19110a8-d5e8-4a9e-92c5-cba569aafa20",
+      "target_id": "category_POL-OWNERSHIP",
+      "type": "belongs_to",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "id": "7e09cbb2-a61c-500d-9a75-569055decf8f",
+      "familyId": "7e09cbb2-a61c-500d-9a75-569055decf8f",
+      "source_id": "f19110a8-d5e8-4a9e-92c5-cba569aafa20",
+      "target_id": "maker_platform_orchestrator",
+      "type": "made_by",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "id": "051984ea-c836-51e7-999b-1319d1373c3d",
+      "familyId": "051984ea-c836-51e7-999b-1319d1373c3d",
+      "source_id": "30e573df-5937-4900-89d5-a6d57adfb103",
+      "target_id": "category_POL-TESTS",
+      "type": "belongs_to",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "id": "718b66f5-2960-5079-b790-606d667da3dd",
+      "familyId": "718b66f5-2960-5079-b790-606d667da3dd",
+      "source_id": "30e573df-5937-4900-89d5-a6d57adfb103",
+      "target_id": "maker_platform_orchestrator",
+      "type": "made_by",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "id": "fb746519-9bff-5149-b06d-b4ad35ef88a8",
+      "familyId": "fb746519-9bff-5149-b06d-b4ad35ef88a8",
+      "source_id": "98f5d783-b344-4761-9bc4-19d752db9cbd",
+      "target_id": "category_POL-SECSCAN",
+      "type": "belongs_to",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "id": "065592c6-1680-5b6d-8941-78c51618fc97",
+      "familyId": "065592c6-1680-5b6d-8941-78c51618fc97",
+      "source_id": "98f5d783-b344-4761-9bc4-19d752db9cbd",
+      "target_id": "maker_platform_orchestrator",
+      "type": "made_by",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "id": "3fc77157-3226-50d5-b26b-50dcc754f309",
+      "familyId": "3fc77157-3226-50d5-b26b-50dcc754f309",
+      "source_id": "1a0f4a44-d23a-42f8-bf24-bb95e10c1fe7",
+      "target_id": "category_POL-OWNERSHIP",
+      "type": "belongs_to",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "id": "4b647957-866d-5f95-bedc-36cfc960287a",
+      "familyId": "4b647957-866d-5f95-bedc-36cfc960287a",
+      "source_id": "1a0f4a44-d23a-42f8-bf24-bb95e10c1fe7",
+      "target_id": "maker_platform_orchestrator",
+      "type": "made_by",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "id": "c5f8f6fc-61d3-58c6-84d4-c172f56b00e0",
+      "familyId": "c5f8f6fc-61d3-58c6-84d4-c172f56b00e0",
+      "source_id": "5795ca60-16de-4d54-aa82-6bdd1a09f581",
+      "target_id": "category_POL-TESTS",
+      "type": "belongs_to",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "id": "e0c180dd-5c6c-5a65-a8a7-481f3adf08ab",
+      "familyId": "e0c180dd-5c6c-5a65-a8a7-481f3adf08ab",
+      "source_id": "5795ca60-16de-4d54-aa82-6bdd1a09f581",
+      "target_id": "maker_platform_orchestrator",
+      "type": "made_by",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "id": "de9b9c52-5fe0-50a2-ad5e-fdb3b213f3ca",
+      "familyId": "de9b9c52-5fe0-50a2-ad5e-fdb3b213f3ca",
+      "source_id": "86ad2a81-0cbe-40c1-accf-30cee1e942dc",
+      "target_id": "category_POL-OWNERSHIP",
+      "type": "belongs_to",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "id": "93074571-80d9-5684-96a3-28b5df513b69",
+      "familyId": "93074571-80d9-5684-96a3-28b5df513b69",
+      "source_id": "86ad2a81-0cbe-40c1-accf-30cee1e942dc",
+      "target_id": "maker_platform_orchestrator",
+      "type": "made_by",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "id": "96715e9a-52d1-530c-adb5-db2ef681a02f",
+      "familyId": "96715e9a-52d1-530c-adb5-db2ef681a02f",
+      "source_id": "cd416a2f-e99c-4bfc-8c94-b49f37f34dd3",
+      "target_id": "category_POL-TESTS",
+      "type": "belongs_to",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "id": "a382e8f7-ae12-533d-9fe3-01a2b1ce6058",
+      "familyId": "a382e8f7-ae12-533d-9fe3-01a2b1ce6058",
+      "source_id": "cd416a2f-e99c-4bfc-8c94-b49f37f34dd3",
+      "target_id": "maker_platform_orchestrator",
+      "type": "made_by",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "id": "709f3bfe-9800-5399-8ae4-d045eaa6579b",
+      "familyId": "709f3bfe-9800-5399-8ae4-d045eaa6579b",
+      "source_id": "eb9a1cf7-1b25-425b-bf8e-727fae27ede1",
+      "target_id": "category_POL-OWNERSHIP",
+      "type": "belongs_to",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "id": "c064cafd-2c04-5f50-9b6a-3338270c513c",
+      "familyId": "c064cafd-2c04-5f50-9b6a-3338270c513c",
+      "source_id": "eb9a1cf7-1b25-425b-bf8e-727fae27ede1",
+      "target_id": "maker_platform_orchestrator",
+      "type": "made_by",
+      "weight": 1.0,
+      "properties": {}
+    }
+  ],
+  "links": []
+}

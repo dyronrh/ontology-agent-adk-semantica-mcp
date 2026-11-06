@@ -1,0 +1,26 @@
+# Fuente de verdad: el despliegue de la propia plataforma (que agentes corren y
+# que capacidades atiende cada uno). En real sale del manifiesto de deploy.
+orchestrator:
+  id: AGENT-ORCH
+  name: Platform Orchestrator Agent
+  framework: Google ADK 2.5 (LlmAgent + sub_agents) + Semantica MCP
+  domain: D-PLATFORM
+subagents:
+  - id: SA-SCAFFOLD
+    name: scaffold-agent
+    handles: [C-PLAN, C-BUILD]
+  - id: SA-TEST
+    name: test-agent
+    handles: [C-TEST]
+  - id: SA-DEPLOY
+    name: deploy-agent
+    handles: [C-DEPLOY]
+  - id: SA-SRE
+    name: sre-agent
+    handles: [C-OPERATE, C-MONITOR]
+  - id: SA-COST
+    name: finops-agent
+    handles: [C-OPTIMIZE]
+  - id: SA-DECOM
+    name: decommission-agent
+    handles: [C-RETIRE]

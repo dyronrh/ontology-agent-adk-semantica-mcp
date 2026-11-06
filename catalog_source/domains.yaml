@@ -1,0 +1,23 @@
+# Fuente de verdad: grupos del org chart / Backstage Groups.
+# En una plataforma real esto lo exporta tu IdP o Backstage, no se escribe a mano.
+domains:
+  - id: D-PLATFORM
+    name: Platform & Infra
+    github_team: "@platform"
+    description: Dominio de la plataforma interna (IDP) y la infra
+  - id: D-PAYMENTS
+    name: Payments
+    github_team: "@payments"
+    description: Dominio de pagos y checkout
+  - id: D-IDENTITY
+    name: Identity & Access
+    github_team: "@identity"
+    description: Dominio de identidad, auth y permisos
+  - id: D-DATA
+    name: Data Platform
+    github_team: "@data"
+    description: Dominio de datos, feature store y pipelines
+  - id: D-FRONTEND
+    name: Web & Mobile
+    github_team: "@frontend"
+    description: Dominio de experiencias web y movil

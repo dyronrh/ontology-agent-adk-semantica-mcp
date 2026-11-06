@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "semantica": {
+      "command": "python",
+      "args": ["semantica_mcp_shim.py"],
+      "env": {
+        "SEMANTICA_KG_PATH": "./semantica_graph.json"
+      }
+    }
+  },
+  "_comment": "Apunta al shim, no a 'python -m semantica.mcp_server'. El servidor que trae semantica 0.6.6 lee SEMANTICA_KG_PATH (no SEMANTICA_GRAPH), carga el grafo con un metodo que no existe (ContextGraph.load) y nunca persiste al disco, asi que arranca vacio y pierde las decisiones al cerrar. El shim corrige eso y añade la herramienta resolve_governance, que devuelve los gates aplicables a (capacidad, entorno) para que el prompt del agente no tenga que recitarlos."
+}

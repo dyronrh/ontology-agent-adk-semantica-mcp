@@ -1,0 +1,12 @@
+# catalog-info.yaml — formato Backstage. Vive junto al codigo del servicio.
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: payments-api
+  description: Servicio de pagos y cobros
+  annotations:
+    idp/entity-id: SVC-PAYMENTS-API
+spec:
+  type: service
+  lifecycle: C-OPERATE
+  path: /services/payments-api/
